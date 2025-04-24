@@ -1,0 +1,917 @@
+/*
+Theme Name: Topline Theme
+Theme URI: https://example.com
+Author: Hadeer
+Author URI: https://example.com
+Description: قالب أفراس للسفر والسياحة
+Version: 1.0
+*/
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* مخفي افتراضيًا */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: #0056b3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  background-color: #f9f9f9;
+}
+
+.hero-header {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.header-bg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
+/* زر القائمة للموبايل */
+.menu-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.main-nav {
+  position: absolute;
+  top: 160px;
+  right: 40%;
+  z-index: 999;
+}
+
+.main-nav.active {
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.main-nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+.main-nav a:hover {
+  color: #007bff;
+}
+
+/* النص داخل الهيدر */
+.hero-text {
+  position: absolute;
+  top: 370px;
+  right: 300px;
+  transform: translateY(-50%);
+  text-align: right;
+  color: #1f1f1f;
+}
+.hero-text h1 {
+  font-size: 48px;
+  margin: 0;
+  color: #2d3e8d;
+}
+.hero-text h3 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #2c85c5;
+}
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: gray;
+}
+  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  .about-section {
+    direction: rtl;
+    background-color: #f9f9f9;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+        gap: 0px;
+    flex-wrap: wrap;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 0px;
+    margin-left: 200px;
+    
+  }
+  
+  .about-text h2 {
+    font-size: 29px;
+    color: #000;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #b3dcf1;
+    display: inline-block;
+    padding-bottom: 3px;
+  }
+
+  .about-text h3 {
+    font-size: 22px;
+    color: #188aa3;
+    margin-bottom: 10px;
+  }
+  
+  .about-text p
+   {
+    font-size: 16px;
+    color: #333;
+
+  }
+  
+ 
+  
+  .about-images {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+    height: 400px; 
+  }
+  
+  .about-images .bg-img {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    max-width: 50%;
+    height: 50%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .about-images .top-img {
+    position: absolute; 
+    z-index: 2;
+    left: 250px;
+    top:30px;
+    width: 90%;
+    max-width: 290px;
+    height: 350px;
+  }
+  /*.........*/
+  
+  .programs-section {
+    padding: 50px 5%;
+    background-color: #f9f9f9;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .section-header h2 {
+    font-size: 22px;
+    color: #444;
+  }
+  
+  .section-header a {
+    font-size: 14px;
+    color: #2EBCB9;
+    text-decoration: none;
+  }
+  
+  .programs-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .program-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .program-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .program-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .program-card h3 {
+    font-size: 16px;
+    margin: 15px 0 5px;
+    color: #333;
+  }
+  
+  .program-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .btn-more {
+    display: inline-block;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #2EBCB9, #252A91);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  /*................*/
+  
+.ad-banner {
+    display: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0; 
+    background-color: #f5f5f5; 
+    padding: 20px 0;
+  }
+  
+  .ad-banner img {
+    display: block;
+    width: 80%;
+    height: 130px;
+    margin: 0;
+  }
+  
+  .ad-text {
+    position: relative;
+    width: 400px;
+    background: linear-gradient(to right, #188aa3, #0a5d73);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    top: 130px;
+    right: 1100px;
+    height: 130px;
+  }
+
+
+/*...........*/  
+  
+  
+  /* سكشن الاتصال */
+  .contact-section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+    padding: 60px 20px;
+    height:100vh;
+  }
+  .contact-container h2{
+
+    border-bottom: 2px solid #d4e3e7;
+    display: inline-block;
+  }
+  .contact-container p{
+    color: #d3d8d9;
+
+  } 
+  .contact-container {
+    width: 99%;
+    padding: 90px 40px;
+    background: linear-gradient(to right, #188aa3, #0a5d73);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    color: #fff;
+  }
+  
+  
+  /* كل أنواع الإدخال النصي والأرقام */
+.contact-container input[type="text"],
+.contact-container input[type="number"],
+.ff-el-input,
+.ff-el-textarea,
+.ff-el-form-control {
+  width: 80%;
+  max-width: 350px!important;
+  height: 45px;
+  margin: 10px auto;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+  
+
+/* زر الإرسال */
+  
+  /*
+  .contact-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .contact-container p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #d8d8d8;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input, textarea {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
+  }
+  
+  button {
+    background-color: white;
+    color: #2b32b2;
+    border: none;
+    padding: 12px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #f1f1f1;
+  }
+   */
+
+  /* إضافة طبقة شبه شفافة خلف النص لتوضيحه أكثر */
+  
+  .main-footer {
+    background-color: #1e3483;
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    direction: rtl;
+    padding: 40px 20px 20px;
+  }
+  
+  .footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px dashed #fff3;
+    padding-bottom: 30px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .footer-column.logo img {
+    max-width: 140px;
+  }
+  
+  .footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #fff3;
+    display: inline-block;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .footer-column ul li i {
+    margin-left: 8px;
+  }
+  
+  .footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid #fff3;
+  }
+  
+  .footer-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .social a {
+    color: #fff;
+    margin: 0 6px;
+    font-size: 18px;
+  }
+  
+ 
+  
+  .copyright {
+    font-size: 13px;
+    color: #ccc;
+    direction: rtl;
+    flex: 1;
+    text-align: right;
+  }
+  .footer-column ul li span {
+    color: #fff;
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  
+  
+  
+  .footer-top-nav {
+    background-color: #0f2b83;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .footer-menu {
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    background-color: #0f2b83;
+    text-align: center;
+  }
+  
+  .footer-menu li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .footer-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative;
+  }
+  
+  .footer-menu a::after {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+  }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+  /* responsive */
+
+  @media (min-width:551px)and (max-width: 991px)   {
+     /* زر المينيو يظهر */
+     
+     .main-nav {
+      position: absolute;
+      top: 80px;
+      right: 250px;
+      z-index: 999;
+    }
+    
+    .main-nav.active {
+      flex-direction: column;
+      background-color: #fff;
+      padding: 50px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+    }
+    
+    
+    .main-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+    .main-nav a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .main-nav a:hover {
+      color: #007bff;
+    }
+    
+     .ad-banner {
+      display: relative;
+      align-items: center;
+      gap: 0; 
+      background-color: #f5f5f5; 
+      padding: 20px 0;
+    }
+    
+    .ad-banner img {
+      width: 100px;
+      height: 50px;
+      margin: 0;
+    }
+    
+    .ad-text {
+      position: relative;
+      width: 150px;
+      background: linear-gradient(to right, #188aa3, #0a5d73);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 19px;
+      text-align: center;
+      top: 165px;
+      right: 555px;
+      height: 165px;
+    }
+  
+   
+     .hero-header {
+       position: relative;
+       width: 100%;
+       padding-bottom: 300px; 
+       overflow: hidden;
+     }
+   
+     .header-bg {
+       position: absolute;
+       top: 0;
+       right: 0;
+       width: 100%;
+       object-fit: cover; 
+       z-index: 1;
+     }
+   
+     .hero-text {
+       position: absolute;
+       top: 150px;
+       right: 100px;
+       transform: translate(50%, -50%);
+       z-index: 2;
+       color: #fff;
+       text-align: center;
+       padding: 20px;
+     }
+   
+     .hero-header h1 {
+       font-size: 24px;
+     }
+   
+     .hero-header h3 {
+       font-size: 18px;
+     }
+   
+     .hero-header p {
+       font-size: 16px;
+     }
+   
+     .ad-banner img {
+       width: 100%;
+       height: auto;
+     }
+ 
+     .about-section {
+       padding: 40px 15px;
+     }
+   
+     .about-container {
+       flex-direction: row-reverse;
+       flex-wrap: wrap;
+       gap: 20px;
+     }
+   
+     .about-text {
+       flex: 1;
+       min-width: 300px;
+       text-align: right;
+     }
+   
+     .about-text h2 {
+       font-size: 26px;
+     }
+   
+     .about-text h3 {
+       font-size: 20px;
+     }
+   
+     .about-text p {
+       font-size: 15px;
+     }
+   
+     .about-images {
+       flex: 1;
+       min-width: 250px;
+       height: 300px;
+       position: relative;
+     }
+   
+     .about-images .bg-img {
+       position: absolute;
+       top: 0;
+       left: 120px;
+       max-width: 40%;
+       height: 40%;
+       object-fit: cover;
+       z-index: 1;
+     }
+   
+     .about-images .top-img {
+       position: absolute;
+       left: 140px;
+       top: 20px;
+       width: 80%;
+       max-width: 220px;
+       height: 250px;
+       z-index: 2;
+     }
+    }
+    
+
+
+ 
+@media (max-width: 550px)   {
+      /* كود الموبايل فقط */
+    
+    
+       
+      .main-nav {
+        position: absolute;
+        top: 10px;
+        right: 100px;
+        z-index: 999;
+      }
+      
+      .main-nav.active {
+        flex-direction: column;
+        padding: 20px;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        width: 10px;
+        z-index: 999;
+      }
+      
+      
+      .main-nav ul {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        padding: 0;
+        margin: 0;
+      }
+      .main-nav a {
+        color: #000;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 8px;
+      }
+      .main-nav a:hover {
+        color: #007bff;
+      }
+      
+        .ad-banner {
+          display: relative;
+          align-items: center;
+          gap: 0; 
+          background-color: #f5f5f5; 
+          padding: 20px 0;
+        }
+        
+        .ad-banner img {
+          width: 78px;
+          height: 50px;
+          margin: 0;
+        }
+        
+        .ad-text {
+          position: relative;
+          width: 78px;
+          background: linear-gradient(to right, #188aa3, #0a5d73);
+          color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          font-size: 10px;
+          text-align: center;
+          top: 70px;
+          right: 230px;
+          height: 70px;
+        }
+        .hero-header {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          
+          padding-bottom: 150px; 
+        }
+      
+        .header-bg {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          object-fit: cover;
+          z-index: 1;
+        }
+      
+        .hero-text {
+          position: absolute;
+          top: 80px;
+          right: 80px;
+          transform: translate(50%, -50%);
+          z-index: 2;
+          color: #fff;
+          text-align: center;
+          padding: 5px;
+        }
+      
+        .hero-header h1 {
+          font-size: 20px;
+        }
+      
+        .hero-header h3 {
+          font-size: 10px;
+        }
+      
+        .hero-header p {
+          font-size: 8px;
+          display: none;
+        }
+      
+        .ad-banner img {
+          width: 100%;
+          height: auto;
+        }
+      
+        .about-section {
+          padding: 30px 10px;
+        }
+      
+        .about-container {
+          flex-direction: column-reverse;
+          align-items: center;
+          gap: 20px;
+        }
+      
+        .about-text {
+          text-align: center;
+        }
+      
+        .about-text h2 {
+          font-size: 22px;
+        }
+      
+        .about-text h3 {
+          font-size: 18px;
+        }
+      
+        .about-text p {
+          font-size: 14px;
+        }
+      
+        .about-images {
+          width: 100%;
+          height: 250px;
+          position: relative;
+        }
+      
+        .about-images .bg-img {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 60%;
+          height: 50%;
+          object-fit: cover;
+          z-index: 1;
+        }
+      
+        .about-images .top-img {
+          position: absolute;
+          top: 0px;
+          left: 220px;
+          transform: translateX(-50%);
+          width: 50;
+          height: 120px;
+          object-fit: cover;
+          z-index: 2;
+        }
+      
+        .programs-grid {
+          grid-template-columns: 1fr;
+        }
+        .contact-section {
+          padding: 30px 10px;
+          height: auto; /* خليه يناسب المحتوى بدل ما يثبت الطول */
+          align-items: flex-start; /* يخلي الفورم تبدأ من فوق */
+        }
+      
+        .contact-container {
+          padding: 30px 20px;
+          width: 100%;
+        }
+      
+        .ff-el-form-control {
+          width: 90%;
+          max-width: 100%;
+        }
+      }
